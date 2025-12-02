@@ -56,6 +56,21 @@
                          class="absolute right-0 top-auto z-50 w-screen p-4 sm:max-w-xs">
                         <ul x-on:click.away="mobileMenu = false"
                             class="p-6 space-y-4 bg-white border border-gray-100 shadow-xl rounded-xl">
+                            <!-- Sidebar links for mobile -->
+                            <li class="pb-4 border-b border-gray-200">
+                                <a class="block text-sm font-medium font-serif" href="#">About Us</a>
+                            </li>
+                            <li class="pb-4 border-b border-gray-200">
+                                <a class="block text-sm font-medium font-serif" href="#">Pearls</a>
+                            </li>
+                            <li class="pb-4 border-b border-gray-200">
+                                <a class="block text-sm font-medium font-serif" href="#">Best Sellers</a>
+                            </li>
+                            <li class="pb-4 border-b border-gray-200">
+                                <a class="block text-sm font-medium font-serif" href="#">Contact</a>
+                            </li>
+                            
+                            <!-- Collection links for mobile -->
                             @foreach ($this->collections as $collection)
                                 <li>
                                     <a class="text-sm font-medium"

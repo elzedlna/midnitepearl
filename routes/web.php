@@ -33,3 +33,5 @@ Route::get('checkout/success', CheckoutSuccessPage::class)->name('checkout-succe
 
 // New Pages 
 Route::get('/', function () {return view('landing');});
+Route::get('display-products', function () {return view('display-products-page');});
+

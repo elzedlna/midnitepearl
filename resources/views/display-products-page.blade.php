@@ -22,8 +22,7 @@
     <body class="bg-[#FAF7EE] min-h-screen">
         <div class="w-full max-w-screen mx-auto">
             <div class="flex flex-col md:flex-row">
-                <!-- Hide sidebar on mobile, show on desktop -->
-                <aside class="hidden md:block w-56 pt-16 ml-8 pl-10 space-y-6 text-[#333]">
+                <aside class="w-full md:w-56 pt-8 md:pt-16 ml-8 pl-10 space-y-6 text-[#333] md:block flex flex-row justify-around md:flex-col">
                     <a class="block text-lg font-serif" href="#">About Us</a>
                     <a class="block text-lg font-serif" href="#">Pearls</a>
                     <a class="block text-lg font-serif" href="#">Best Sellers</a>
@@ -51,87 +50,39 @@
                         </p>
                     </div>
                 </main>
-                
             </div>
 
-            <section class="w-full max-w-screen-xl mx-auto mt-16 ">
-                <div class="grid md:grid-cols-[2fr_1fr] mb-4">
-                    <div class="h-80 md:h-96 overflow-hidden">
-                    <img
-                        src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1400&q=80"
-                        alt="Pearl on sand"
-                        class="w-full h-full object-cover"
-                    />
-                    </div>
-
-                    <div class="relative h-80 md:h-96">
-                        <img
-                            src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1400&q=80"
-                            alt="Water texture"
-                            class="w-full h-full object-cover"
-                        />
-
-                        <div class="absolute inset-0 flex items-end">
-                            <div class="w-full bg-white/70 backdrop-blur-sm p-4 md:p-6">
-                                <h3 class="font-serif text-xl md:text-2xl text-[#2d2d2d] leading-tight">
-                                    Locally Harvested, Globally Admired
-                                </h3>
-                                <p class="font-sans mt-3 text-sm md:text-base text-gray-700 leading-relaxed">
-                                    Our pearls are cultivated and selected by local artisans in Lombok. Every piece
-                                    carries the warmth of their craftsmanship and the serenity of the ocean it came from.
-                                </p>
-                            </div>
-                        </div>
+            <section class="grid md:grid-cols-2 mt-16">
+                <!-- Left side - Text content -->
+                <div class="bg-[#7DD4CA] p-12 md:p-16 flex items-center">
+                    <div class="max-w-md">
+                        <h2 class="font-serif text-3xl md:text-4xl text-white mb-6" style="font-family: 'Inria Serif', serif;">
+                            The Art of Natural Elegance
+                        </h2>
+                        <p class="text-white leading-relaxed" style="font-family: 'Lato', sans-serif;">
+                            True beauty doesn't shout—it glows. Each Lombok pearl is chosen for its natural luster, untouched by artificial perfection, bringing you jewelry that feels pure and timeless.
+                        </p>
                     </div>
                 </div>
-            </section>
 
-            <section class="bg-cream-50 py-12" style="background-color:#fbf6ec;">
-                <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 text-center font-serif">
-                    {{-- Heading --}}
-                    <h2 class="text-xl font-semibold tracking-widest text-black mb-6">SHOP NOW</h2>
-
-                    {{-- Images grid --}}
-                    <div class="mt-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 items-start">
-                    {{-- Item 1 --}}
-                    <div class="flex flex-col items-center">
-                        <img src="{{ asset('images/landing/bracelet.jpg') }}"
-                            alt="Bracelet"
-                            class="w-full h-56 object-cover rounded shadow-sm">
-                        <span class="mt-4 text-sm uppercase tracking-wider text-gray-700">Bracelets</span>
+                <!-- Right side - Images -->
+                <div class="grid grid-rows-2">
+                    <!-- Top image -->
+                    <div class="bg-gray-200 overflow-hidden">
+                        <img 
+                            src="YOUR_IMAGE_URL_HERE" 
+                            alt="Pearl brooch"
+                            class="w-full h-full object-cover"
+                        >
                     </div>
-
-                    {{-- Item 2 --}}
-                    <div class="flex flex-col items-center">
-                        <img src="{{ asset('images/landing/necklace.jpg') }}"
-                            alt="Necklace"
-                            class="w-full h-56 object-cover rounded shadow-sm">
-                        <span class="mt-4 text-sm uppercase tracking-wider text-gray-700">Necklaces</span>
-                    </div>
-
-                    {{-- Item 3 --}}
-                    <div class="flex flex-col items-center">
-                        <img src="{{ asset('images/landing/ring.jpg') }}"
-                            alt="Ring"
-                            class="w-full h-56 object-cover rounded shadow-sm">
-                        <span class="mt-4 text-sm uppercase tracking-wider text-gray-700">Rings</span>
-                    </div>
-
-                    {{-- Item 4 --}}
-                    <div class="flex flex-col items-center">
-                        <img src="{{ asset('images/landing/earrings.jpg') }}"
-                            alt="Earrings"
-                            class="w-full h-56 object-cover rounded shadow-sm">
-                        <span class="mt-4 text-sm uppercase tracking-wider text-gray-700">Earrings</span>
-                    </div>
-                    </div>
-
-                    {{-- View all link --}}
-                    <div class="mt-10">
-                    <a href="{{ route('collection.view', 'all') ?? '#' }}"
-                        class="text-sm underline text-black hover:text-gray-700">
-                        View All
-                    </a>
+                    
+                    <!-- Bottom image -->
+                    <div class="bg-blue-300 overflow-hidden">
+                        <img 
+                            src="YOUR_IMAGE_URL_HERE" 
+                            alt="Pearl ring on hand"
+                            class="w-full h-full object-cover"
+                        >
                     </div>
                 </div>
             </section>
@@ -183,37 +134,6 @@
                         </template>
                     </div>
                     </div>
-                </div>
-            </section>
-
-            {{-- Hero with overlay (reduced height, responsive) --}}
-            <section class="mt-8 w-w-screen-full">
-                <div class="relative overflow-hidden rounded-md">
-                    {{-- Background image (img + object-cover keeps it responsive & accessible) --}}
-                    <img
-                    src="{{ asset('images/landing/hero.jpg') }}"    
-                    alt="The Art of Natural Elegance"
-                    class="w-full h-44 sm:h-56 md:h-72 lg:h-80 object-cover"
-                    >
-
-                    {{-- Overlay: centered content --}}
-                    <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
-                        <div class="max-w-screen-xl mx-auto text-center px-4 sm:px-6 lg:px-8 font-serif text-neutral-900/90">
-
-                            <h2 class="text-base sm:text-lg md:text-xl lg:text-2xl font-semibold mb-3">
-                            The Art of Natural Elegance
-                            </h2>
-
-                            <p class="text-xs sm:text-sm md:text-base leading-relaxed max-w-xl mx-auto">
-                            True beauty doesn’t shout — it glows.
-                            Each Lombok pearl is chosen for its natural luster, untouched by artificial perfection,
-                            bringing you jewellery that feels pure and timeless.
-                            </p>
-                        </div>
-                    </div>
-
-                    {{-- subtle overlay gradient at bottom if you want contrast (optional) --}}
-                    <div class="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-white/90 to-transparent pointer-events-none"></div>
                 </div>
             </section>
             @include('components.newsletter')
